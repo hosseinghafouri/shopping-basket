@@ -13,10 +13,11 @@ const bastekProductsContainer = $.querySelector(".cart-items");
 const removeAllProductsBtn = $.querySelector(".delet-all-product");
 const cartTotalPriceElem = $.querySelector(".total-price");
 
+let productsFragment = $.createDocumentFragment();
+
 allProducts.forEach((products) => {
     newProducts(products);
 });
-
 function newProducts(pro) {
     
     let shopItemElem, titleElem, imgElem, detailsElem, priceElem, addBtnElem ;
@@ -53,8 +54,10 @@ function newProducts(pro) {
 
     shopItemElem.append(titleElem, imgElem, detailsElem);
 
-    shopItemsContainer.append(shopItemElem);
+    productsFragment.append(shopItemElem);
+
 };
+shopItemsContainer.append(productsFragment);
 
 
 function addProductToBasketArray (productId, product) {
