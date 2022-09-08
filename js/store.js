@@ -76,9 +76,6 @@ function addProductToBasketArray (productId, product) {
         userBasket.push(mainProduct);
     };
 
-
-
-
     basketProductsGenerator(userBasket);
     calcTotalPrice(userBasket);
 };
@@ -136,8 +133,10 @@ function basketProductsGenerator(userBasketArray) {
     
         cartRowElem.append(cartItemElem, priceElem, cartQuantityElem);
     
-        bastekProductsContainer.append(cartRowElem);
+        productsFragment.append(cartRowElem);
     });
+
+    bastekProductsContainer.append(productsFragment);
 
 };
 
